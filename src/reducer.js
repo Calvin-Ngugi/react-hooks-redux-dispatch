@@ -6,8 +6,18 @@ function changeState(state, action) {
       return state;
   }
 }
+function render(){
+  document.body.textContext = state.count;
+}
 
-let state = { count: 0 };
-let action = { type: "counter/increment" };
+function dispatch(action){
+  state = changeState(state, action)
+  render();
+}
 
-changeState(state, action);
+render();
+
+// let state = { count: 0 };
+// let action = { type: "counter/increment" };
+
+// changeState(state, action);
